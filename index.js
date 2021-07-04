@@ -12,5 +12,28 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map(sentence => {
+    const separatedWords = sentence.split(' ');
+    const capitalizedWords = separatedWords.map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    const titleSentence = capitalizedWords.join(" ");
+    return titleSentence;
+  });
 }
+
+
+// const titleCased = () => {
+//   return tutorials.map(sentence => {
+//     const separateWords = sentence.split(" ");
+//     const capitalizedWords = separateWords.map(word => {
+//       return word.charAt(0).toUpperCase() + word.slice(1);
+//     });
+//     const titleSentence = capitalizedWords.join(" ");
+//     return titleSentence;
+//   });
+// }
+
+
+// const titleCased = () =>  {
+//   return tutorials.map(words => words.split(' ').map(cap =>
+//     cap.charAt(0).toUpperCase() + cap.slice(1)).join(' '))
+//   }
